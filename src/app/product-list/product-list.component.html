@@ -1,5 +1,11 @@
-<h2 class="container">Products</h2>
 
+<input type="text" [ngModel]="name" #taskinput>
+<button (click)="addItem(taskinput.value)">add</button>
+<hr>
+
+<li *ngFor="let item of items; let i = index" (click)="complete(i)" [ngClass]="item.isComplete ? 'is-done' : ''">{{ item.name }}</li>
+
+<p>{{displayStatus()}}</p>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
