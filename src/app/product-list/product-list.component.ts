@@ -14,24 +14,24 @@ export class ProductListComponent {
   public count: number = 0;
   public items: TodoItem[] = [];
 
-  addItem(itemname: string){
-    this.items.push({id: this.count++, name: itemname, isComplete: false});
+  addItem(itemname: string) {
+    this.items.push({ id: this.count++, name: itemname, isComplete: false });
   }
 
-  complete(index: number){
+  complete(index: number) {
     this.items[index].isComplete = this.items[index].isComplete ? false : true;
 
-    console.log("index",index);
-    
+    console.log("index", index);
+
     console.log(this.items[index].isComplete);
-    
+
   }
 
-  displayStatus(){
+  displayStatus() {
     let total = 0;
     for (let index = 0; index < this.items.length; index++) {
-      total += this.items[index].isComplete ? 0: 1;
-      
+      total += this.items[index].isComplete ? 0 : 1;
+
     }
     return `${total} remaining out of ${this.items.length} tasks`;
   }
@@ -41,7 +41,7 @@ export class ProductListComponent {
   }
 }
 
-export interface TodoItem { id: number; name: string; isComplete: boolean}
+export interface TodoItem { id: number; name: string; isComplete: boolean }
 
 
 /*
