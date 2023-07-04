@@ -1,9 +1,14 @@
-
-<input type="text" [ngModel]="name" #taskinput>
+<input type="text" [ngModel]="name" #taskinput />
 <button (click)="addItem(taskinput.value)">add</button>
-<hr>
+<hr />
 
-<li *ngFor="let item of items; let i = index" (click)="complete(i)" [ngClass]="item.isComplete ? 'is-done' : ''">{{ item.name }}</li>
+<li
+  *ngFor="let item of items; let i = index"
+  (click)="complete(i)"
+  [ngClass]="item.isComplete ? 'is-done' : ''"
+>
+  {{ item.name }}
+</li>
 
 <p>{{displayStatus()}}</p>
 <!-- 

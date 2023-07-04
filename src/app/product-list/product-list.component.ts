@@ -20,19 +20,15 @@ export class ProductListComponent {
 
   complete(index: number) {
     this.items[index].isComplete = this.items[index].isComplete ? false : true;
-
-    console.log("index", index);
-
-    console.log(this.items[index].isComplete);
-
   }
 
   displayStatus() {
     let total = 0;
+
     for (let index = 0; index < this.items.length; index++) {
       total += this.items[index].isComplete ? 0 : 1;
-
     }
+
     return `${total} remaining out of ${this.items.length} tasks`;
   }
 
